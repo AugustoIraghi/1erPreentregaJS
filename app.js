@@ -8,7 +8,6 @@
 //y luego que me diga el total de todo
 
 
-
 function sumarPrecio(saldoAnterior, saldoAñadir){
     return saldoAnterior += saldoAñadir
 }
@@ -80,4 +79,4 @@ else{
     alert("El codigo de descuento que ha ingresado es invalido. Total a pagar: $"+ saldoActual)
 }
 
-alert("Gracias por comprar con nosotros!")
+alert("Gracias por comprar con nosotros!!")
