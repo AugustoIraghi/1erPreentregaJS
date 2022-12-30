@@ -44,8 +44,8 @@ const descuentoRealizado = (total) => total * 0.80
 
 function sigueComprando(){
     opcion= Number(prompt("Desea seguir comprando? \nEscriba 1 si desea seguir comprando. \nY 2 si no desea seguir comprando."))
-    while(typeof opcion != "number"){
-        opcion = ("La opcion no es valida, vuelva a intentarlo.\nRecuerde escribir 1 si desea seguir comprando y 2 si no desea ningun otro producto")
+    while(isNaN(opcion)){
+        opcion = Number(prompt(("La opcion no es valida, vuelva a intentarlo.\nRecuerde escribir 1 si desea seguir comprando y 2 si no desea ningun otro producto")))
     }
     return opcion
 }
@@ -64,8 +64,6 @@ while (masCosas== 1) {
     saldoActual= sumarAlCarrito(opcion, saldoActual)
     alert("El precio total en su carro de compras es de $" + saldoActual)
     masCosas= sigueComprando()
-    
-
 }
 
 alert("El precio total de todos sus productos es de $" + saldoActual)
