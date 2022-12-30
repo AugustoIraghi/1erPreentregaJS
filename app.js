@@ -2,6 +2,7 @@
 // hay smirnoff, baileys, gancia, fernet, campari
 //primero quiero que me pregunte que cosas quiero
 //que vaya sumando el total
+//que me pregunte si quiero seguir comprando cada vez que elijo algo
 //que me pregunte si tengo un codigo de descuento
 //luego que me pregunte si quiero hacer un envio
 //y luego que me diga el total de todo
@@ -34,12 +35,21 @@ function sumarAlCarrito (num, saldoActual){
             return sumarPrecio(saldoActual,precio)
         
         default:
-            alert("No se ha agregado ningun producto debido a que la opcion que ha elegido es invalida.")
+            alert("No se ha agregado ningun producto debido a que la opcion que ha elegido es invalida.\nRecuerde que debe que usar numeros entre el 1 y el 5")
             return (saldoActual) 
     }
 }
 
+
 const descuentoRealizado = (total) => total * 0.80
+
+function sigueComprando(){
+    opcion= Number(prompt("Desea seguir comprando? \nEscriba 1 si desea seguir comprando. \nY 2 si no desea seguir comprando."))
+    while(typeof opcion != "number"){
+        opcion = ("La opcion no es valida, vuelva a intentarlo.\nRecuerde escribir 1 si desea seguir comprando y 2 si no desea ningun otro producto")
+    }
+    return opcion
+}
 
 
 let saldoActual = 0
@@ -54,9 +64,9 @@ while (masCosas== 1) {
     let opcion = prompt("Elija que quiere comprar, seleccione con un numero lo que desee:\n1. Smirnoff $300\n2. Baileys $1000\n3. Gancia $500\n4. Fernet $700\n5. Campari $400")
     saldoActual= sumarAlCarrito(opcion, saldoActual)
     alert("El precio total en su carro de compras es de $" + saldoActual)
+    masCosas= sigueComprando()
+    
 
-
-    masCosas= Number(prompt("Quieres mas cosas? \n 1 si quiere mas \n 2 si no quiere mas"))
 }
 
 alert("El precio total de todos sus productos es de $" + saldoActual)
