@@ -32,6 +32,10 @@ function sumarAlCarrito (num, saldoActual){
         case "5":
             precio = 400
             return sumarPrecio(saldoActual,precio)
+        
+        default:
+            alert("No se ha agregado ningun producto debido a que la opcion que ha elegido es invalida.")
+            return (saldoActual) 
     }
 }
 
@@ -49,7 +53,7 @@ alert("Bienvenido a la tienda DrunkDwarf de bebidas alcoholicas.")
 while (masCosas== 1) {
     let opcion = prompt("Elija que quiere comprar, seleccione con un numero lo que desee:\n1. Smirnoff $300\n2. Baileys $1000\n3. Gancia $500\n4. Fernet $700\n5. Campari $400")
     saldoActual= sumarAlCarrito(opcion, saldoActual)
-    alert("El precio total actual en su carro de compras es de " + saldoActual)
+    alert("El precio total en su carro de compras es de $" + saldoActual)
 
 
     masCosas= Number(prompt("Quieres mas cosas? \n 1 si quiere mas \n 2 si no quiere mas"))
